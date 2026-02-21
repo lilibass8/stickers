@@ -133,7 +133,13 @@ export default function CartPage() {
                 <span>Total</span>
                 <span>{formatPrice(getTotalPrice())}</span>
               </div>
-              <Button size="lg" className="mb-4 w-full">
+              <Button 
+                size="lg" 
+                className="mb-4 w-full"
+                onClick={() => {
+                  alert('Thank you for your order! This is a demo checkout.')
+                }}
+              >
                 Checkout
               </Button>
               <Button

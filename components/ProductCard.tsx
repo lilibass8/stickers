@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Product, formatPrice } from '@/data/products'
 import Button from './Button'
@@ -12,10 +13,13 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart()
+  const router = useRouter()
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault()
     addToCart(product)
+    // Navigate to cart immediately
+    router.push('/cart')
   }
 
   return (

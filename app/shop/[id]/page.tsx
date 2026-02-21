@@ -42,8 +42,8 @@ export default function ProductPage() {
 
   const handleAddToCart = () => {
     addToCart(product, quantity)
-    // Show a simple notification (you could enhance this with a toast library)
-    alert(`${quantity} x ${product.name} added to cart!`)
+    // Navigate to cart immediately
+    router.push('/cart')
   }
 
   return (

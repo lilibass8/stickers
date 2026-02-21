@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from './ThemeProvider'
@@ -9,8 +10,10 @@ import { useCart } from '@/hooks/useCart'
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme()
   const { cartItems } = useCart()
+  const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [logoClickCount, setLogoClickCount] = useState(0)
 
   useEffect(() => {
     setMounted(true)
@@ -21,13 +24,28 @@ export default function Navbar() {
   // Default theme for SSR
   const currentTheme = mounted ? theme : 'light'
 
+  // Secret admin access - click logo 5 times
+  const handleLogoClick = () => {
+    const newCount = logoClickCount + 1
+    setLogoClickCount(newCount)
+    if (newCount >= 5) {
+      router.push('/admin')
+      setLogoClickCount(0)
+    }
+    // Reset count after 2 seconds
+    setTimeout(() => setLogoClickCount(0), 2000)
+  }
+
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 transition-transform hover:scale-105">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full shadow-lg ring-2 ring-white/50 dark:ring-gray-800/50 md:h-14 md:w-14">
+          <div className="flex items-center space-x-3">
+            <div 
+              onClick={handleLogoClick}
+              className="relative h-12 w-12 cursor-pointer overflow-hidden rounded-full shadow-lg ring-2 ring-white/50 transition-transform hover:scale-105 dark:ring-gray-800/50 md:h-14 md:w-14"
+            >
               <Image
                 src="/images/logo.png"
                 alt="Velora Logo"
@@ -36,10 +54,10 @@ export default function Navbar() {
                 sizes="56px"
               />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-velora-primary to-velora-secondary bg-clip-text text-transparent dark:from-velora-secondary dark:to-velora-accent">
+            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-velora-primary to-velora-secondary bg-clip-text text-transparent transition-transform hover:scale-105 dark:from-velora-secondary dark:to-velora-accent">
               Velora
-            </span>
-          </Link>
+            </Link>
+          </div>
 
           {/* Navigation Links - Desktop */}
           <div className="hidden items-center space-x-6 md:flex">
@@ -54,12 +72,6 @@ export default function Navbar() {
               className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
             >
               Shop
-            </Link>
-            <Link
-              href="/admin"
-              className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
-            >
-              Admin
             </Link>
           </div>
 
@@ -158,13 +170,6 @@ export default function Navbar() {
                 className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
               >
                 Shop
-              </Link>
-              <Link
-                href="/admin"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
-              >
-                Admin
               </Link>
             </div>
           </div>
