@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Floral Sticker Sheet",
+    "description": "Beautiful collection of floral designs perfect for decorating your laptop, water bottle, or journal.",
+    "price": 12.99,
+    "category": "Sticker Sheets",
+    "image": "/images/floral-sheet.jpg",
+    "size": "6x4 inches",
+    "material": "Matte"
+  },
+  {
+    "id": "2",
+    "name": "Cute Cat Sticker",
+    "description": "Adorable single cat sticker with a playful design that brings joy to any surface.",
+    "price": 3.99,
+    "category": "Single Stickers",
+    "image": "/images/cat-sticker.jpg",
+    "size": "2x2 inches",
+    "material": "Glossy"
+  },
+  {
+    "id": "3",
+    "name": "Arabic Quote - 'الحب'",
+    "description": "Elegant Arabic calligraphy sticker featuring the word 'Love' in beautiful script.",
+    "price": 4.99,
+    "category": "Arabic Quotes",
+    "image": "/images/arabic-love.jpg",
+    "size": "3x1.5 inches",
+    "material": "Matte"
+  },
+  {
+    "id": "4",
+    "name": "Pastel Rainbow Pack",
+    "description": "Set of 10 pastel rainbow stickers in soft, dreamy colors perfect for any collection.",
+    "price": 15.99,
+    "category": "Cute Collection",
+    "image": "/images/rainbow-pack.jpg",
+    "size": "Various sizes",
+    "material": "Matte"
+  },
+  {
+    "id": "5",
+    "name": "Minimalist Plant Stickers",
+    "description": "Clean and simple plant-themed sticker sheet with various botanical designs.",
+    "price": 11.99,
+    "category": "Sticker Sheets",
+    "image": "/images/plant-sheet.jpg",
+    "size": "5x3.5 inches",
+    "material": "Matte"
+  },
+  {
+    "id": "6",
+    "name": "Smiling Sun Sticker",
+    "description": "Bright and cheerful sun sticker that adds warmth to any item.",
+    "price": 2.99,
+    "category": "Single Stickers",
+    "image": "/images/sun-sticker.jpg",
+    "size": "2.5x2.5 inches",
+    "material": "Glossy"
+  },
+  {
+    "id": "7",
+    "name": "Arabic Quote - 'الحلم'",
+    "description": "Inspirational Arabic sticker featuring the word 'Dream' in elegant calligraphy.",
+    "price": 4.99,
+    "category": "Arabic Quotes",
+    "image": "/images/arabic-dream.jpg",
+    "size": "3x1.5 inches",
+    "material": "Waterproof"
+  },
+  {
+    "id": "8",
+    "name": "Kawaii Food Collection",
+    "description": "Super cute food-themed stickers including donuts, sushi, and more adorable treats.",
+    "price": 13.99,
+    "category": "Cute Collection",
+    "image": "/images/kawaii-food.jpg",
+    "size": "6x4 inches",
+    "material": "Matte"
+  }
+]
