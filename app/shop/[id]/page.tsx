@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import ProductImage from '@/components/ProductImage'
-import { getProductById, products, Product } from '@/data/products'
+import { getProductById, products, Product, formatPrice } from '@/data/products'
 import Button from '@/components/Button'
 import ProductCard from '@/components/ProductCard'
 import { useCart } from '@/hooks/useCart'
@@ -67,7 +67,7 @@ export default function ProductPage() {
               {product.name}
             </h1>
             <p className="mb-6 text-2xl font-semibold text-gray-800 dark:text-gray-100">
-              ${product.price.toFixed(2)}
+              {formatPrice(product.price)}
             </p>
             <p className="mb-6 text-gray-600 dark:text-gray-400">{product.description}</p>
 

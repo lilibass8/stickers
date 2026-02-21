@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import ProductImage from '@/components/ProductImage'
 import { useCart } from '@/hooks/useCart'
+import { formatPrice } from '@/data/products'
 import Button from '@/components/Button'
 
 export default function CartPage() {
@@ -68,7 +69,7 @@ export default function CartPage() {
                         {item.product.category}
                       </p>
                       <p className="mt-2 text-lg font-bold text-gray-800 dark:text-gray-100">
-                        ${item.product.price.toFixed(2)}
+                        {formatPrice(item.product.price)}
                       </p>
                     </div>
 
@@ -104,7 +105,7 @@ export default function CartPage() {
                   {/* Subtotal */}
                   <div className="flex items-center justify-end sm:flex-col sm:justify-center">
                     <p className="text-xl font-bold text-gray-800 dark:text-gray-100">
-                      ${(item.product.price * item.quantity).toFixed(2)}
+                      {formatPrice(item.product.price * item.quantity)}
                     </p>
                   </div>
                 </div>
@@ -121,7 +122,7 @@ export default function CartPage() {
               <div className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
                   <span>Subtotal</span>
-                  <span>${getTotalPrice().toFixed(2)}</span>
+                  <span>{formatPrice(getTotalPrice())}</span>
                 </div>
                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
                   <span>Shipping</span>
@@ -130,7 +131,7 @@ export default function CartPage() {
               </div>
               <div className="mb-6 flex justify-between text-2xl font-bold text-gray-800 dark:text-gray-100">
                 <span>Total</span>
-                <span>${getTotalPrice().toFixed(2)}</span>
+                <span>{formatPrice(getTotalPrice())}</span>
               </div>
               <Button size="lg" className="mb-4 w-full">
                 Checkout

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { products, addProduct, updateProduct, deleteProduct, Product } from '@/data/products'
+import { products, addProduct, updateProduct, deleteProduct, Product, formatPrice } from '@/data/products'
 import ProductImage from '@/components/ProductImage'
 import Button from '@/components/Button'
 import Modal from '@/components/Modal'
@@ -183,7 +183,7 @@ export default function AdminPage() {
                     {product.category}
                   </td>
                   <td className="px-6 py-4 font-semibold text-gray-800 dark:text-gray-100">
-                    ${product.price.toFixed(2)}
+                    {formatPrice(product.price)}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex gap-2">
@@ -292,7 +292,7 @@ function ProductForm({
             htmlFor="price"
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Price ($)
+            Price (ر.ع)
           </label>
           <input
             type="number"

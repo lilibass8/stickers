@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Product } from '@/data/products'
+import { Product, formatPrice } from '@/data/products'
 import Button from './Button'
 import ProductImage from './ProductImage'
 import { useCart } from '@/hooks/useCart'
@@ -41,7 +41,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </p>
         <div className="mb-4 flex items-center justify-between">
           <span className="text-xl font-bold text-gray-800 dark:text-gray-100">
-            ${product.price.toFixed(2)}
+            {formatPrice(product.price)}
           </span>
           <span className="rounded-full bg-velora-primary/20 px-3 py-1 text-xs font-medium text-velora-primary dark:bg-velora-secondary/30 dark:text-velora-secondary">
             {product.category}
