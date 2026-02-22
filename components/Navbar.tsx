@@ -60,7 +60,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden items-center space-x-6 space-x-reverse md:flex">
+          <div className="hidden items-center space-x-5 space-x-reverse md:flex">
             <Link
               href="/"
               className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
@@ -72,6 +72,30 @@ export default function Navbar() {
               className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
             >
               المتجر
+            </Link>
+            <Link
+              href="/special-orders"
+              className="text-gray-600 transition-colors hover:text-velora-primary dark:text-gray-300 dark:hover:text-velora-secondary"
+            >
+              ✨ طلبات خاصة
+            </Link>
+            <Link
+              href="/custom-theme"
+              className="text-gray-600 transition-colors hover:text-purple-500 dark:text-gray-300"
+            >
+              🎨 ثيم مخصص
+            </Link>
+            <Link
+              href="/for-brands"
+              className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+            >
+              🏢 For Brands
+            </Link>
+            <Link
+              href="/upload-design"
+              className="rounded-xl bg-gradient-to-r from-teal-500 to-velora-primary px-4 py-1.5 text-sm font-semibold text-white shadow transition-all hover:scale-105"
+            >
+              📸 حمّل صورك
             </Link>
           </div>
 
@@ -170,6 +194,34 @@ export default function Navbar() {
                 className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
               >
                 المتجر
+              </Link>
+              <Link
+                href="/special-orders"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-600 transition-colors hover:text-velora-primary dark:text-gray-300"
+              >
+                ✨ طلبات خاصة
+              </Link>
+              <Link
+                href="/custom-theme"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-600 transition-colors hover:text-purple-500 dark:text-gray-300"
+              >
+                🎨 ثيم مخصص
+              </Link>
+              <Link
+                href="/for-brands"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300"
+              >
+                🏢 For Brands
+              </Link>
+              <Link
+                href="/upload-design"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-block rounded-xl bg-gradient-to-r from-teal-500 to-velora-primary px-4 py-2 text-sm font-semibold text-white shadow text-center"
+              >
+                📸 حمّل صورك
               </Link>
             </div>
           </div>

@@ -50,6 +50,81 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="relative py-16 px-4 bg-gray-50 dark:bg-gray-900/50">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-3 text-center text-3xl font-bold text-gray-800 dark:text-gray-100 md:text-4xl">
+            خدماتنا المميزة
+          </h2>
+          <p className="mb-10 text-center text-gray-500 dark:text-gray-400">اختر نوع الطلب الذي يناسبك</p>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Special Orders */}
+            <a href="/special-orders" className="group rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="h-2 bg-gradient-to-r from-velora-primary to-velora-secondary" />
+              <div className="p-6">
+                <div className="mb-3 text-4xl">✨</div>
+                <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-100">طلبات خاصة</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">تصميم ستيكرات بأفكارك الخاصة وتفاصيلك المميزة</p>
+                <div className="mt-4 flex items-center text-velora-primary font-medium text-sm gap-1 group-hover:gap-2 transition-all">
+                  اطلب الآن
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            {/* Custom Theme */}
+            <a href="/custom-theme" className="group rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="h-2 bg-gradient-to-r from-purple-500 to-velora-primary" />
+              <div className="p-6">
+                <div className="mb-3 text-4xl">🎨</div>
+                <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-100">ثيم مخصص</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">اختر الثيم الذي يعبر عن شخصيتك من مجموعة متنوعة</p>
+                <div className="mt-4 flex items-center text-purple-500 font-medium text-sm gap-1 group-hover:gap-2 transition-all">
+                  اختر ثيمك
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            {/* For Brands */}
+            <a href="/for-brands" className="group rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="h-2 bg-gradient-to-r from-gray-700 to-velora-primary" />
+              <div className="p-6">
+                <div className="mb-3 text-4xl">🏢</div>
+                <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-100">For Brands</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">حلول ستيكرات احترافية للشركات والعلامات التجارية</p>
+                <div className="mt-4 flex items-center text-gray-700 dark:text-gray-300 font-medium text-sm gap-1 group-hover:gap-2 transition-all">
+                  تواصل معنا
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            {/* Upload Design */}
+            <a href="/upload-design" className="group rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="h-2 bg-gradient-to-r from-teal-500 to-velora-secondary" />
+              <div className="p-6">
+                <div className="mb-3 text-4xl">📸</div>
+                <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-100">حمّل صورك</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">ارفع صورك وسنحولها لستيكرات — تستلم التصميم قبل الطباعة</p>
+                <div className="mt-4 flex items-center text-teal-500 font-medium text-sm gap-1 group-hover:gap-2 transition-all">
+                  ارفع الآن
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products */}
       <section className="relative py-16 px-4">
         {/* Subtle background pattern */}
