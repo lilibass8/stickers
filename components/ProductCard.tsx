@@ -57,9 +57,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           size="sm"
           onClick={handleAddToCart}
           className="w-full"
-          aria-label={`Add ${product.name} to cart`}
+          aria-label={`أضف ${product.name} للسلة`}
         >
-          Add to Cart
+          أضف للسلة
         </Button>
       </div>
     </Link>

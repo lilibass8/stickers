@@ -15,13 +15,13 @@ export default function CartPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="mb-4 text-4xl font-bold text-gray-800 dark:text-gray-100">
-              Your Cart is Empty
+              سلتك فارغة
             </h1>
             <p className="mb-8 text-lg text-gray-600 dark:text-gray-400">
-              Start shopping to add items to your cart!
+              ابدأ التسوق لإضافة منتجات إلى سلتك!
             </p>
             <Link href="/shop">
-              <Button size="lg">Continue Shopping</Button>
+              <Button size="lg">متابعة التسوق</Button>
             </Link>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function CartPage() {
   return (
     <div className="fade-in">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <h1 className="mb-8 text-4xl font-bold text-gray-800 dark:text-gray-100">Shopping Cart</h1>
+        <h1 className="mb-8 text-4xl font-bold text-gray-800 dark:text-gray-100">سلة التسوق</h1>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Cart Items */}
@@ -75,7 +75,7 @@ export default function CartPage() {
 
                     {/* Quantity Controls */}
                     <div className="mt-4 flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center space-x-2 space-x-reverse">
                         <button
                           onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
                           className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
@@ -97,7 +97,7 @@ export default function CartPage() {
                         onClick={() => removeFromCart(item.product.id)}
                         className="text-red-500 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
                       >
-                        Remove
+                        حذف
                       </button>
                     </div>
                   </div>
@@ -117,30 +117,30 @@ export default function CartPage() {
           <div className="lg:col-span-1">
             <div className="sticky top-24 rounded-2xl bg-white p-6 shadow-lg dark:bg-gray-800">
               <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                Order Summary
+                ملخص الطلب
               </h2>
               <div className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
-                  <span>Subtotal</span>
+                  <span>المجموع الفرعي</span>
                   <span>{formatPrice(getTotalPrice())}</span>
                 </div>
                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
-                  <span>Shipping</span>
-                  <span>Free</span>
+                  <span>الشحن</span>
+                  <span>مجاني</span>
                 </div>
               </div>
               <div className="mb-6 flex justify-between text-2xl font-bold text-gray-800 dark:text-gray-100">
-                <span>Total</span>
+                <span>الإجمالي</span>
                 <span>{formatPrice(getTotalPrice())}</span>
               </div>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="mb-4 w-full"
                 onClick={() => {
-                  alert('Thank you for your order! This is a demo checkout.')
+                  alert('شكراً لطلبك! هذا تطبيق تجريبي.')
                 }}
               >
-                Checkout
+                إتمام الشراء
               </Button>
               <Button
                 variant="outline"
@@ -148,7 +148,7 @@ export default function CartPage() {
                 className="w-full"
                 onClick={clearCart}
               >
-                Clear Cart
+                إفراغ السلة
               </Button>
             </div>
           </div>

@@ -16,9 +16,9 @@ export default function Home() {
       <section className="relative overflow-hidden py-24 px-4">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <div 
+          <div
             className="absolute inset-0 bg-center bg-no-repeat"
-            style={{ 
+            style={{
               backgroundImage: 'url(/images/background.png)',
               backgroundSize: '100% auto',
               backgroundPosition: 'center center'
@@ -30,7 +30,6 @@ export default function Home() {
 
         {/* Animated Small Circles */}
         <div className="absolute inset-0">
-          {/* Small moving circles with floating animation */}
           <div className="absolute left-[10%] top-[20%] h-4 w-4 rounded-full bg-white/50 animate-float shadow-lg"></div>
           <div className="absolute left-[20%] top-[60%] h-3 w-3 rounded-full bg-velora-teal/70 animate-float-delayed shadow-lg"></div>
           <div className="absolute left-[30%] top-[40%] h-5 w-5 rounded-full bg-velora-yellow/60 animate-float shadow-lg"></div>
@@ -57,7 +56,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-velora-primary/5 via-transparent to-velora-accent/5"></div>
         <div className="relative mx-auto max-w-7xl">
           <h2 className="mb-8 text-center text-3xl font-bold text-gray-800 dark:text-gray-100 md:text-4xl">
-            Featured Products
+            المنتجات المميزة
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredProducts.map((product) => (
@@ -67,13 +66,13 @@ export default function Home() {
           {featuredProducts.length === 0 && (
             <div className="py-12 text-center">
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                No products available at the moment.
+                لا توجد منتجات متاحة حالياً.
               </p>
             </div>
           )}
           <div className="mt-8 text-center">
             <Link href="/shop">
-              <Button variant="outline">View All Products</Button>
+              <Button variant="outline">عرض جميع المنتجات</Button>
             </Link>
           </div>
         </div>

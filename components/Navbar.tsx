@@ -20,7 +20,7 @@ export default function Navbar() {
   }, [])
 
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0)
-  
+
   // Default theme for SSR
   const currentTheme = mounted ? theme : 'light'
 
@@ -41,37 +41,37 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div 
+          <div className="flex items-center space-x-3 space-x-reverse">
+            <div
               onClick={handleLogoClick}
               className="relative h-12 w-12 cursor-pointer overflow-hidden rounded-full shadow-lg ring-2 ring-white/50 transition-transform hover:scale-105 dark:ring-gray-800/50 md:h-14 md:w-14"
             >
               <Image
                 src="/images/logo.png"
-                alt="Velora Logo"
+                alt="شعار فيلورا"
                 fill
                 className="object-cover"
                 sizes="56px"
               />
             </div>
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-velora-primary to-velora-secondary bg-clip-text text-transparent transition-transform hover:scale-105 dark:from-velora-secondary dark:to-velora-accent">
-              Velora
+              فيلورا
             </Link>
           </div>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden items-center space-x-6 md:flex">
+          <div className="hidden items-center space-x-6 space-x-reverse md:flex">
             <Link
               href="/"
               className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
             >
-              Home
+              الرئيسية
             </Link>
             <Link
               href="/shop"
               className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
             >
-              Shop
+              المتجر
             </Link>
           </div>
 
@@ -79,7 +79,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 md:hidden"
-            aria-label="Toggle menu"
+            aria-label="فتح القائمة"
           >
             {mobileMenuOpen ? (
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,12 +103,12 @@ export default function Navbar() {
           </button>
 
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 space-x-reverse">
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleTheme}
               className="rounded-full p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-              aria-label="Toggle dark mode"
+              aria-label="تبديل الوضع الليلي"
             >
               {currentTheme === 'light' ? (
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -162,14 +162,14 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
               >
-                Home
+                الرئيسية
               </Link>
               <Link
                 href="/shop"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
               >
-                Shop
+                المتجر
               </Link>
             </div>
           </div>

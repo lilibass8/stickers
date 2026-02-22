@@ -33,8 +33,8 @@ export default function ProductPage() {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center">
-          <p className="mb-4 text-lg text-gray-600 dark:text-gray-400">Product not found</p>
-          <Button onClick={() => router.push('/shop')}>Back to Shop</Button>
+          <p className="mb-4 text-lg text-gray-600 dark:text-gray-400">المنتج غير موجود</p>
+          <Button onClick={() => router.push('/shop')}>العودة للمتجر</Button>
         </div>
       </div>
     )
@@ -74,20 +74,20 @@ export default function ProductPage() {
             {/* Product Details */}
             <div className="mb-6 space-y-3">
               <div className="flex items-center">
-                <span className="mr-2 font-semibold text-gray-700 dark:text-gray-300">Size:</span>
+                <span className="ml-2 font-semibold text-gray-700 dark:text-gray-300">الحجم:</span>
                 <span className="text-gray-600 dark:text-gray-400">{product.size}</span>
               </div>
               <div className="flex items-center">
-                <span className="mr-2 font-semibold text-gray-700 dark:text-gray-300">
-                  Material:
+                <span className="ml-2 font-semibold text-gray-700 dark:text-gray-300">
+                  الخامة:
                 </span>
                 <span className="rounded-full bg-velora-teal/20 px-3 py-1 text-sm text-velora-teal dark:bg-velora-teal/30 dark:text-velora-teal">
                   {product.material}
                 </span>
               </div>
               <div className="flex items-center">
-                <span className="mr-2 font-semibold text-gray-700 dark:text-gray-300">
-                  Category:
+                <span className="ml-2 font-semibold text-gray-700 dark:text-gray-300">
+                  التصنيف:
                 </span>
                 <span className="rounded-full bg-velora-primary/20 px-3 py-1 text-sm text-velora-primary dark:bg-velora-secondary/30 dark:text-velora-secondary">
                   {product.category}
@@ -96,9 +96,9 @@ export default function ProductPage() {
             </div>
 
             {/* Quantity Selector */}
-            <div className="mb-6 flex items-center space-x-4">
-              <span className="font-semibold text-gray-700 dark:text-gray-300">Quantity:</span>
-              <div className="flex items-center space-x-2">
+            <div className="mb-6 flex items-center space-x-4 space-x-reverse">
+              <span className="font-semibold text-gray-700 dark:text-gray-300">الكمية:</span>
+              <div className="flex items-center space-x-2 space-x-reverse">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
@@ -119,7 +119,7 @@ export default function ProductPage() {
 
             {/* Add to Cart Button */}
             <Button size="lg" onClick={handleAddToCart} className="w-full">
-              Add to Cart
+              أضف للسلة
             </Button>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function ProductPage() {
         {relatedProducts.length > 0 && (
           <div className="mt-16">
             <h2 className="mb-8 text-3xl font-bold text-gray-800 dark:text-gray-100">
-              Related Products
+              منتجات مشابهة
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {relatedProducts.map((relatedProduct) => (

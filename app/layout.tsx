@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const parastoofont = localFont({
+  src: '../font/Parastoofixed-swashes.ttf',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'Velora - Premium Stickers & Designs',
-  description: 'Beautiful premium stickers for every occasion',
+  title: 'فيلورا - ستيكرات وتصاميم مميزة',
+  description: 'ستيكرات جميلة ومميزة لكل المناسبات',
 }
 
 export default function RootLayout({
@@ -18,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
+      <body className={parastoofont.className}>
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />

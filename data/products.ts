@@ -13,46 +13,46 @@ export interface Product {
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Velora Sticker Collection 1',
+    name: 'مجموعة ستيكرات فيلورا 1',
     description:
-      'Beautiful and vibrant sticker design perfect for personalizing your laptop, phone, water bottle, or journal.',
+      'تصميم ستيكرات جميل وملوّن، مثالي لتخصيص لابتوبك، هاتفك، زجاجة الماء، أو يوميّاتك.',
     price: 0.5,
-    category: 'Sticker Sheets',
+    category: 'أوراق ستيكرات',
     image: '/images/sticker-1.png',
-    size: '6x4 inches',
-    material: 'Matte',
+    size: '6×4 بوصة',
+    material: 'مطفي',
   },
   {
     id: '5',
-    name: 'Velora Sticker Collection 5',
+    name: 'مجموعة ستيكرات فيلورا 5',
     description:
-      'Elegant and modern sticker design that adds style and personality to any surface.',
+      'تصميم ستيكرات أنيق وعصري يضيف ستايل وشخصية لأي سطح.',
     price: 0.5,
-    category: 'Sticker Sheets',
+    category: 'أوراق ستيكرات',
     image: '/images/sticker-5.png',
-    size: '5x3.5 inches',
-    material: 'Matte',
+    size: '5×3.5 بوصة',
+    material: 'مطفي',
   },
   {
     id: '6',
-    name: 'Velora Sticker Collection 6',
-    description: 'Unique and eye-catching sticker that brings character to your belongings.',
+    name: 'مجموعة ستيكرات فيلورا 6',
+    description: 'ستيكر فريد ولافت يضيف طابعاً مميزاً لأغراضك.',
     price: 0.5,
-    category: 'Single Stickers',
+    category: 'ستيكرات مفردة',
     image: '/images/sticker-6.png',
-    size: '3x3 inches',
-    material: 'Glossy',
+    size: '3×3 بوصة',
+    material: 'لامع',
   },
   {
     id: '7',
-    name: 'Velora Sticker Collection 7',
+    name: 'مجموعة ستيكرات فيلورا 7',
     description:
-      'Premium quality sticker with stunning design, perfect for expressing your unique style.',
+      'ستيكر فاخر بجودة عالية وتصميم رائع، مثالي للتعبير عن أسلوبك الفريد.',
     price: 0.5,
-    category: 'Single Stickers',
+    category: 'ستيكرات مفردة',
     image: '/images/sticker-7.png',
-    size: '3x3 inches',
-    material: 'Waterproof',
+    size: '3×3 بوصة',
+    material: 'مقاوم للماء',
   },
 ]
 
@@ -68,7 +68,7 @@ export function getProductById(id: string): Product | undefined {
 
 // Helper function to get products by category
 export function getProductsByCategory(category: string): Product[] {
-  if (category === 'All') return products
+  if (category === 'الكل') return products
   return products.filter((p) => p.category === category)
 }
 

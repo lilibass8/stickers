@@ -6,7 +6,7 @@ import ProductCard from '@/components/ProductCard'
 import CategoryFilter from '@/components/CategoryFilter'
 
 export default function ShopPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [selectedCategory, setSelectedCategory] = useState('الكل')
   const filteredProducts = getProductsByCategory(selectedCategory)
 
   return (
@@ -20,10 +20,10 @@ export default function ShopPage() {
         </div>
         <div className="relative mx-auto max-w-7xl text-center">
           <h1 className="mb-4 text-4xl font-bold text-white drop-shadow-2xl md:text-5xl lg:text-6xl">
-            Shop All Stickers
+            تسوق جميع الستيكرات
           </h1>
           <p className="text-lg font-medium text-white/95 drop-shadow-lg md:text-xl">
-            Discover our complete collection of beautiful stickers
+            اكتشف مجموعتنا الكاملة من الستيكرات الجميلة
           </p>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function ShopPage() {
           ) : (
             <div className="py-12 text-center">
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                No products found in this category.
+                لا توجد منتجات في هذا التصنيف.
               </p>
             </div>
           )}
