@@ -69,7 +69,7 @@ export default function CartPage() {
                         {item.product.category}
                       </p>
                       <p className="mt-2 text-lg font-bold text-gray-800 dark:text-gray-100">
-                        {formatPrice(item.product.price)}
+                        <span className="font-times" lang="en">{formatPrice(item.product.price)}</span>
                       </p>
                     </div>
 
@@ -82,7 +82,7 @@ export default function CartPage() {
                         >
                           -
                         </button>
-                        <span className="w-12 text-center font-semibold text-gray-800 dark:text-gray-100">
+                        <span className="w-12 text-center font-semibold text-gray-800 dark:text-gray-100 font-times" lang="en">
                           {item.quantity}
                         </span>
                         <button
@@ -105,7 +105,7 @@ export default function CartPage() {
                   {/* Subtotal */}
                   <div className="flex items-center justify-end sm:flex-col sm:justify-center">
                     <p className="text-xl font-bold text-gray-800 dark:text-gray-100">
-                      {formatPrice(item.product.price * item.quantity)}
+                      <span className="font-times" lang="en">{formatPrice(item.product.price * item.quantity)}</span>
                     </p>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function CartPage() {
               <div className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
                   <span>المجموع الفرعي</span>
-                  <span>{formatPrice(getTotalPrice())}</span>
+                  <span className="font-times" lang="en">{formatPrice(getTotalPrice())}</span>
                 </div>
                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
                   <span>الشحن</span>
@@ -131,7 +131,7 @@ export default function CartPage() {
               </div>
               <div className="mb-6 flex justify-between text-2xl font-bold text-gray-800 dark:text-gray-100">
                 <span>الإجمالي</span>
-                <span>{formatPrice(getTotalPrice())}</span>
+                <span className="font-times" lang="en">{formatPrice(getTotalPrice())}</span>
               </div>
               <Button
                 size="lg"

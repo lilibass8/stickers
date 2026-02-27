@@ -38,11 +38,30 @@ export default function ShopPage() {
           />
 
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+            selectedCategory === 'الكل' ? (
+              // show each category section separately when viewing all
+              Array.from(new Set(products.map((p) => p.category))).map((cat) => {
+                const items = products.filter((p) => p.category === cat)
+                return (
+                  <section key={cat} className="mb-12">
+                    <h2 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+                      {cat}
+                    </h2>
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                      {items.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </section>
+                )
+              })
+            ) : (
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            )
           ) : (
             <div className="py-12 text-center">
               <p className="text-lg text-gray-600 dark:text-gray-400">

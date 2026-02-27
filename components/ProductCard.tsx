@@ -1,40 +1,34 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Product, formatPrice } from '@/data/products'
 import Button from './Button'
 import ProductImage from './ProductImage'
-import { useCart } from '@/hooks/useCart'
+import ProductCardCarousel from './ProductCardCarousel'
 
 interface ProductCardProps {
   product: Product
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { addToCart } = useCart()
-  const router = useRouter()
-
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault()
-    addToCart(product)
-    // Navigate to cart immediately
-    router.push('/cart')
-  }
 
   return (
     <Link href={`/shop/${product.id}`}>
       <div className="group h-full rounded-2xl bg-white p-4 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl dark:bg-gray-800">
-        {/* Product Image */}
-        <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-700">
-          <ProductImage
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          />
-        </div>
+        {/* Product Image(s) */}
+        {Array.isArray(product.image) ? (
+          <ProductCardCarousel images={product.image} name={product.name} />
+        ) : (
+          <div className="relative mb-4 w-full h-56 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-700">
+            <ProductImage
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-contain transition-transform duration-300 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            />
+          </div>
+        )}
 
         {/* Product Info */}
         <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-gray-100">
@@ -44,7 +38,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.description}
         </p>
         <div className="mb-4 flex items-center justify-between">
-          <span className="text-xl font-bold text-gray-800 dark:text-gray-100">
+          <span className="text-xl font-bold text-gray-800 dark:text-gray-100 font-times" lang="en">
             {formatPrice(product.price)}
           </span>
           <span className="rounded-full bg-velora-primary/20 px-3 py-1 text-xs font-medium text-velora-primary dark:bg-velora-secondary/30 dark:text-velora-secondary">
@@ -52,16 +46,8 @@ export default function ProductCard({ product }: ProductCardProps) {
           </span>
         </div>
 
-        {/* Add to Cart Button */}
-        <Button
-          size="sm"
-          onClick={handleAddToCart}
-          className="w-full"
-          aria-label={`أضف ${product.name} للسلة`}
-        >
-          أضف للسلة
-        </Button>
-      </div>
+        {/* Add to Cart Button - removed for display-only mode */}
+        {/* kept price above; button intentionally omitted so users only browse images */}      </div>
     </Link>
   )
 }

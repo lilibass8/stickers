@@ -15,12 +15,14 @@ export default function ProductPage() {
   const [product, setProduct] = useState<Product | null>(null)
   const [quantity, setQuantity] = useState(1)
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
     const productId = params.id as string
     const foundProduct = getProductById(productId)
     if (foundProduct) {
       setProduct(foundProduct)
+      setCurrentImageIndex(0)
       // Get related products (same category, excluding current product)
       const related = products
         .filter((p) => p.category === foundProduct.category && p.id !== productId)
@@ -50,23 +52,56 @@ export default function ProductPage() {
     <div className="fade-in">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
-          {/* Product Image */}
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-700">
-            <ProductImage
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          {/* Product Image(s) */}
+          {Array.isArray(product.image) ? (
+            <div className="relative mb-4 h-[28rem] overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-700">
+              <ProductImage
+                src={product.image[currentImageIndex]}
+                alt={`${product.name} ${currentImageIndex + 1}`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* navigation arrows */}
+              <button
+                onClick={() =>
+                  setCurrentImageIndex((prev) =>
+                    prev === 0 ? product.image.length - 1 : prev - 1
+                  )
+                }
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/70 p-2 shadow hover:bg-white dark:bg-gray-800/70 dark:hover:bg-gray-700"
+              >
+                ‹
+              </button>
+              <button
+                onClick={() =>
+                  setCurrentImageIndex((prev) =>
+                    prev === product.image.length - 1 ? 0 : prev + 1
+                  )
+                }
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/70 p-2 shadow hover:bg-white dark:bg-gray-800/70 dark:hover:bg-gray-700"
+              >
+                ›
+              </button>
+            </div>
+          ) : (
+            <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-700">
+              <ProductImage
+                src={product.image as string}
+                alt={product.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          )}
 
           {/* Product Info */}
           <div className="flex flex-col justify-center">
             <h1 className="mb-4 text-4xl font-bold text-gray-800 dark:text-gray-100">
               {product.name}
             </h1>
-            <p className="mb-6 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            <p className="mb-6 text-2xl font-semibold text-gray-800 dark:text-gray-100 font-times" lang="en">
               {formatPrice(product.price)}
             </p>
             <p className="mb-6 text-gray-600 dark:text-gray-400">{product.description}</p>
@@ -105,7 +140,7 @@ export default function ProductPage() {
                 >
                   -
                 </button>
-                <span className="w-12 text-center text-lg font-semibold text-gray-800 dark:text-gray-100">
+                <span className="w-12 text-center text-lg font-normal text-gray-800 dark:text-gray-100 font-times" lang="en">
                   {quantity}
                 </span>
                 <button

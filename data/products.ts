@@ -4,7 +4,8 @@ export interface Product {
   description: string
   price: number
   category: string
-  image: string
+  // allow a single image or an array for sticker sheets with multiple previews
+  image: string | string[]
   size: string
   material: string
 }
@@ -13,46 +14,49 @@ export interface Product {
 export const products: Product[] = [
   {
     id: '1',
-    name: 'مجموعة ستيكرات فيلورا 1',
-    description:
-      'تصميم ستيكرات جميل وملوّن، مثالي لتخصيص لابتوبك، هاتفك، زجاجة الماء، أو يوميّاتك.',
+    name: 'ستكر شيت',
+    description: 'مجموعة من الستيكرات في ورقة واحدة',
     price: 0.5,
     category: 'أوراق ستيكرات',
-    image: '/images/sticker-1.png',
-    size: '6×4 بوصة',
+    // display designated sticker previews together
+    image: [
+      '/images/stik.png',
+      '/images/sticker-5.png',
+      '/images/sticker-6.png',
+      '/images/sticker-7.png',
+    ],
+    size: 'A6',
     material: 'مطفي',
   },
   {
     id: '5',
-    name: 'مجموعة ستيكرات فيلورا 5',
-    description:
-      'تصميم ستيكرات أنيق وعصري يضيف ستايل وشخصية لأي سطح.',
-    price: 0.5,
-    category: 'أوراق ستيكرات',
-    image: '/images/sticker-5.png',
-    size: '5×3.5 بوصة',
-    material: 'مطفي',
+    name: 'بزنس كارد',
+    description: '',
+    price: 0,
+    category: '',
+    image: '',
+    size: '',
+    material: '',
   },
   {
     id: '6',
-    name: 'مجموعة ستيكرات فيلورا 6',
-    description: 'ستيكر فريد ولافت يضيف طابعاً مميزاً لأغراضك.',
-    price: 0.5,
-    category: 'ستيكرات مفردة',
-    image: '/images/sticker-6.png',
-    size: '3×3 بوصة',
-    material: 'لامع',
+    name: 'كروت متنوعه',
+    description: '',
+    price: 0,
+    category: '',
+    image: '',
+    size: '',
+    material: '',
   },
   {
     id: '7',
-    name: 'مجموعة ستيكرات فيلورا 7',
-    description:
-      'ستيكر فاخر بجودة عالية وتصميم رائع، مثالي للتعبير عن أسلوبك الفريد.',
-    price: 0.5,
-    category: 'ستيكرات مفردة',
-    image: '/images/sticker-7.png',
-    size: '3×3 بوصة',
-    material: 'مقاوم للماء',
+    name: 'مطويات',
+    description: '',
+    price: 0,
+    category: '',
+    image: '',
+    size: '',
+    material: '',
   },
 ]
 
